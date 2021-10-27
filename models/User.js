@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-// const { UUIDV4 } = require('uuidv4');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
