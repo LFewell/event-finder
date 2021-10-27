@@ -1,4 +1,4 @@
-const apiKey = process.env.TM_APIKEY
+const apiKey = "MQQSELn5pJ4IejXfT0t5DgufSAGg3gZt"
 const tmUrl = "https://app.ticketmaster.com/discovery/v2/"
 
 
