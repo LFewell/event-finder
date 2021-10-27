@@ -1,5 +1,7 @@
-const apiKey = "MQQSELn5pJ4IejXfT0t5DgufSAGg3gZt"
-const tmUrl = "https://app.ticketmaster.com/discovery/v2/"
+require("dotenv").config();
+
+const apiKey = process.env.TM_APIKEY;
+const tmUrl = "https://app.ticketmaster.com/discovery/v2/";
 
 
 function getLocation() {
