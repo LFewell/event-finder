@@ -10,10 +10,10 @@ USE events_db;
 -- -- Create Table 1 - Users
  CREATE TABLE users (
      id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
---     userID VARCHAR(30) NOT NULL,
---     email VARCHAR(30) NOT NULL,
---     userPassword VARCHAR(30) NOT NULL
---     -- More should be coming soon
+    userID VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    userPassword VARCHAR(30) NOT NULL
+    -- More should be coming soon
  );
 
 -- -- Create Table 2 - Data
@@ -21,8 +21,8 @@ USE events_db;
 --     eventKey INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
 --     eventID VARCHAR(30) NOT NULL,
 --     eventName VARCHAR(30) NOT NULL,
---     geoLat NUMBER(30) NOT NULL,
---     geoLon NUMBER(30) NOT NULL,
---     eventDate DATE(30) NOT NULL,
---     -- eventDescription LONGTEXT NOT NULL,
+--     -- geoLat NUMBER(30) NOT NULL,
+--     -- geoLon NUMBER(30) NOT NULL,
+--     -- eventDate DATE(30) NOT NULL,
+--     -- eventDescription LONGTEXT NOT NULL
 -- );
