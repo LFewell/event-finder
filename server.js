@@ -12,7 +12,12 @@ const hbs = exphbs.create({});
 
 const sess = {
     secret: 'Login Secret',
-    cookie: {},
+    cookie: {
+        maxAge: 86400,
+        httpOnly: true,
+        secure: false,
+        sameSite: 'strict',
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
