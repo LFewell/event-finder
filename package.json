@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/LFewell/project-two#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "mysql2": "^2.3.2",
-    "sequelize": "^6.8.0"
+    "sequelize": "^6.8.0",
+    "uuidv4": "^6.2.12"
   }
 }
