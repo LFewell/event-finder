@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
            password: req.body.password,
        });
        console.log('New User', newUser);
-       if (newUser) {await req.session.save(() => {
+       if (newUser) {
+           await req.session.save(() => {
            req.session.userId = newUser.id;
            req.session.username = newUser.username;
            req.session.userEmail = newUser.email;
