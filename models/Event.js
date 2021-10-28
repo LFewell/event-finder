@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 // Create a model for the events table
 // this table should serve as a place-holder for data pulled from the Ticketmaster app
-Events.init(
+Event.init(
     {
         id: {
             type: DataTypes.INTEGER,
