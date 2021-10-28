@@ -12,6 +12,9 @@ Event.init(
         eventID: {
             
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62f6c20f032550afd569bb7f7862e39daa5f3912
     }
 )
