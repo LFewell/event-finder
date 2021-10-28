@@ -6,7 +6,6 @@ router.post('/', async (req, res) => {
    try {
        console.log("it's this one?", req.body);
        const newUser = await User.create({
-           username: req.body.username,
            email: req.body.email,
            password: req.body.password,
        });
@@ -14,8 +13,7 @@ router.post('/', async (req, res) => {
        if (newUser) {
            await req.session.save(() => {
            req.session.userId = newUser.id;
-           req.session.username = newUser.username;
-           req.session.userEmail = newUser.email;
+           req.session.email = newUser.email;
            req.session.password = newUser.password;
            req.session.loggedIn = true;
 
@@ -29,12 +27,13 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
    try {
        console.log('am i here?', req.body);
-       let user = await User.findOne({
+        let user = await User.findOne({
            where: {
                email: req.body.email,
+               password: req.body.password,
            },
        });
-       console.log("I'm HERE!", user);
+       console.log('I am HERE!!!!', user)
        if (!user) {
            res.status(400).json({ message: 'No user account found!' });
            return;
@@ -45,7 +44,9 @@ router.post('/login', async (req, res) => {
        if (!validPassword) {
            res.status(400).json({ message: 'No user account found!' });
            return;
-       }
+       } else {
+           console.log('Invalid Password!')
+       };
 
        req.session.save(() => {
            req.session.userId = user.id;
