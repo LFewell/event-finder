@@ -34,9 +34,6 @@
         </header>
         <main class="container container-fluid mt-5">
             <!-- Render the sub layout -->
-            <p id="location">Please allow your location to see events near you!</p>
-            <div id="map"></div>
-            <div id="events"></div>
             {{{ body }}}
         </main>
         <footer>
@@ -48,9 +45,6 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
-
-    <script src="../../public/js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtuxJJ_8azkc7EEPAdlFLVd-eXk0mHzQ"></script>
 </body>
 
 </html>
