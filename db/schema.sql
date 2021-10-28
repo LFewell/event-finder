@@ -11,7 +11,6 @@ USE events_db;
 --  DROP TABLE IF EXISTS User;  -- Main database, shouldn't ever drop it
  CREATE TABLE User (
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
  );
