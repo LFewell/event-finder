@@ -17,8 +17,8 @@ USE events_db;
  );
 
 -- Create Table 2 - Events (Convert to Model)
- DROP TABLE IF EXISTS Events;
- CREATE TABLE Events (
+ DROP TABLE IF EXISTS Event;
+ CREATE TABLE Event (
      eventID VARCHAR(50) NOT NULL,
      eventName VARCHAR(255),
      geoLat FLOAT(255,15) NOT NULL,
