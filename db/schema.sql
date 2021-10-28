@@ -8,7 +8,7 @@ USE events_db;
 
 
 -- Create Table 1 - Users
- DROP TABLE IF EXISTS User;
+--  DROP TABLE IF EXISTS User;  -- Main database, shouldn't ever drop it
  CREATE TABLE User (
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ USE events_db;
     password VARCHAR(255) NOT NULL
  );
 
--- Create Table 2 - Events
+-- Create Table 2 - Events (Convert to Model)
  DROP TABLE IF EXISTS Events;
  CREATE TABLE Events (
      eventID VARCHAR(50) NOT NULL,
@@ -26,3 +26,12 @@ USE events_db;
      eventDate VARCHAR(50) NOT NULL,
      eventDescription VARCHAR(255)
  ); 
+
+ -- Create Table 3 - Temporary Data
+ DROP TABLE IF EXISTS Temporary;
+ CREATE TABLE Temporary (
+    tempID INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tempUsername VARCHAR(255) NOT NULL,
+    tempEmail VARCHAR(255) NOT NULL,
+    tempPassword VARCHAR(255) NOT NULL
+ );
