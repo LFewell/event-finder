@@ -7,22 +7,22 @@ CREATE DATABASE events_db;
 USE events_db;
 
 
--- -- Create Table 1 - Users
- CREATE TABLE users (
-     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    userID VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    userPassword VARCHAR(30) NOT NULL
-    -- More should be coming soon
+-- Create Table 1 - Users
+ DROP TABLE IF EXISTS User;
+ CREATE TABLE User (
+    id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
  );
 
--- -- Create Table 2 - Data
--- CREATE TABLE userData (
---     eventKey INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
---     eventID VARCHAR(30) NOT NULL,
---     eventName VARCHAR(30) NOT NULL,
---     -- geoLat NUMBER(30) NOT NULL,
---     -- geoLon NUMBER(30) NOT NULL,
---     -- eventDate DATE(30) NOT NULL,
---     -- eventDescription LONGTEXT NOT NULL
--- );
+-- Create Table 2 - Events
+ DROP TABLE IF EXISTS Events;
+ CREATE TABLE Events (
+     eventID VARCHAR(50) NOT NULL,
+     eventName VARCHAR(255),
+     geoLat INT(50) NOT NULL,
+     geoLon INT(50) NOT NULL,
+     eventDate VARCHAR(50) NOT NULL,
+     eventDescription VARCHAR(255)
+ ); 
