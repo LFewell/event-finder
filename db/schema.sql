@@ -21,8 +21,8 @@ USE events_db;
  CREATE TABLE Events (
      eventID VARCHAR(50) NOT NULL,
      eventName VARCHAR(255),
-     geoLat INT(50) NOT NULL,
-     geoLon INT(50) NOT NULL,
+     geoLat FLOAT(255,15) NOT NULL,
+     geoLon FLOAT(255,15) NOT NULL,
      eventDate VARCHAR(50) NOT NULL,
      eventDescription VARCHAR(255)
  ); 
