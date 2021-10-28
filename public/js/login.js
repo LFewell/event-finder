@@ -4,7 +4,8 @@ const loginForm = async (e) => {
 
     let email = document.querySelector('#email-login').value.trim();
     let password = document.querySelector('#password-login').value.trim();
-
+    console.log('this is the email', email);
+    console.log('this is the password', password);
     if (email && password) {
         let res = await fetch('/api/user/login', {
             method: 'POST',
@@ -36,9 +37,9 @@ const signUpForm = async (event) => {
 };
 
 document
-    .querySelector('#login-form')
+    .querySelector('#login-button')
     .addEventListener('click', loginForm);
 
 document
-    .querySelector('#signup-form')
+    .querySelector('#signup-button')
     .addEventListener('click', signUpForm);
