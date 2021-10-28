@@ -27,10 +27,9 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
    try {
        console.log('am i here?', req.body);
-        let user = await User.findOne({
+        const user = await User.findOne({
            where: {
                email: req.body.email,
-               password: req.body.password,
            },
        });
        console.log('I am HERE!!!!', user)
@@ -55,8 +54,7 @@ router.post('/login', async (req, res) => {
 
            res.json({ user, message: 'You are now logged in!' });
        })
-
-   } catch (err) {
+    } catch (err) {
        res.status(400).json({ message: 'No user account found!' });
    }     
 })
