@@ -23,7 +23,11 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        eventDate: {
+        eventStartDate: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        eventEndDate: {
             type: DataTypes.DATE,
             allowNull: false,
         },

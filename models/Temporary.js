@@ -12,10 +12,6 @@ Temporary.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        tempUsername: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         tempEmail: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -23,7 +19,17 @@ Temporary.init(
         tempPassword: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        geoLat: {
+            type: DataTypes.NUMBER,
+            length: 25,
+            allowNull: false,
+        },
+        geoLon: {
+            type: DataTypes.NUMBER,
+            length: 25,
+            allowNull: false,
+        },
     }
 );
 
