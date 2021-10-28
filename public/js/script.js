@@ -1,8 +1,29 @@
-require("dotenv").config();
 
-const apiKey = process.env.TM_APIKEY;
+
+const apiKey = "MQQSELn5pJ4IejXfT0t5DgufSAGg3gZt"
 const tmUrl = "https://app.ticketmaster.com/discovery/v2/";
+var btn = $("#btn-search")
 
+
+btn.on("click", function() {
+  var userInput = document.getElementById("input-search").value
+  getEvents();
+  function getEvents() {
+    fetch(tmUrl + "events.json?" + "city=" + userInput + "&apikey=" + apiKey )
+    .then((response) => response.json())
+    .then(function(json) {
+      console.log(json)
+      showSearch(json);
+    })
+    function showSearch(json) {
+      for (var i=0; i<json.page.size; i++) {
+        $("#events").replaceWith("<p>"+json._embedded.events[i].name+"</p>")
+      }
+
+    }
+  }
+
+})
 
 function getLocation() {
     if (navigator.geolocation) {
