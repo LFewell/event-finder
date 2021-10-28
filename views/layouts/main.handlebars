@@ -13,18 +13,23 @@
 
 <body>
     <div class="flex-column justify-space-around">
-        <header class="display-flex justify-space-between align-center p-2">
+        <header class='display-flex justify-space-between text-align-center p-2'>
             <h1>
-                <a href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to return to the home page.">Home</a>
+                Welcome to the Event Planner!
             </h1>
-            <nav>
-                <!-- Conditionally render login or logout links -->
-                {{#if logged_in}}
-                <a href="/">Home</a> |
-                <button class="no-button" id="logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
+            <nav class="navbar navbar-expand-sm bg-light">
+                <ul class='navbar-nav'>
+                    <!-- Conditionally render login or logout links -->
+                    {{#if logged_in}}
+                    <li class="li-inline nav-item"><a href="/">Home</a></li>
+                    <a href="/logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">logout</a>
+                    <li class="li-inline nav-item"><button href="/logout" class="no-button" id="logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">logout</button></li>
+                    {{else}}
+                    <li class="nav-item"><a class="nav-link" href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to return to the home page.">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to navigate to login page.">login</a></li>
+                    {{/if}}
+                </ul>
+                
             </nav>
         </header>
         <main class="container container-fluid mt-5">
