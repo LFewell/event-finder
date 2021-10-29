@@ -44,4 +44,4 @@ Event.init(
     }
 );
 
-module.exports = Temporary;
+module.exports = favEvent;
