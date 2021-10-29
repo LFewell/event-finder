@@ -11,14 +11,13 @@ USE events_db;
 --  DROP TABLE IF EXISTS User;  -- Main database, shouldn't ever drop it
  CREATE TABLE User (
     id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL
  );
 
 -- Create Table 2 - Events (Convert to Model)
- DROP TABLE IF EXISTS Events;
- CREATE TABLE Events (
+ DROP TABLE IF EXISTS Event;
+ CREATE TABLE Event (
      eventID VARCHAR(50) NOT NULL,
      eventName VARCHAR(255),
      geoLat FLOAT(255,15) NOT NULL,
