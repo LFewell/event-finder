@@ -4,26 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Planner</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <meta name="description" content="">
+    <title>Event Finder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>
     <div class="flex-column justify-space-around">
-        <header class="display-flex justify-space-between align-center p-2">
+        <header class='display-flex justify-space-between text-center p-2'>
             <h1>
-                <a href="/">Home</a>
+                Welcome to the Event Finder!
             </h1>
-            <nav>
-                <!-- Conditionally render login or logout links -->
-                {{#if logged_in}}
-                <a href="/">Home</a> |
-                <button class="no-button" id="logout">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
+            <nav class="navbar navbar-expand-sm bg-light">
+                <ul class='navbar-nav'>
+                    <!-- Conditionally render login or logout links -->
+                    {{#if logged_in}}
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">Log out</a></li>
+                    {{else}}
+                    <li class="nav-item"><a class="nav-link" href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to return to the home page.">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to navigate to login page.">Login</a></li>
+                    {{/if}}
+                </ul>
+                
             </nav>
         </header>
         <main class="container container-fluid mt-5">
@@ -39,9 +44,7 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
-
-    <script src="../../public/js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtuxJJ_8azkc7EEPAdlFLVd-eXk0mHzQ"></script>
+    
 </body>
 
 </html>

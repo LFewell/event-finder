@@ -1,7 +1,42 @@
-require("dotenv").config();
 
-const apiKey = process.env.TM_APIKEY;
+
+const apiKey = "MQQSELn5pJ4IejXfT0t5DgufSAGg3gZt"
 const tmUrl = "https://app.ticketmaster.com/discovery/v2/";
+var btn = $("#btn-search")
+var events = $("#events")
+
+
+btn.on("click", function() {
+  var userInput = document.getElementById("input-search").value
+  getEvents();
+  function getEvents() {
+    fetch(tmUrl + "events.json?" + "city=" + userInput + "&apikey=" + apiKey )
+    .then((response) => response.json())
+    .then(function(json) {
+      console.log(json)
+      showSearch(json);
+      function showSearch(json) {
+        document.getElementById("events").innerHTML = " ";
+        for (var i=0; i<5; i++) {
+          $("#events").append("<div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div></li>"), events.childNodes;
+        }
+  
+      }
+    })
+    // .then(function initMap(position, json) {
+    //   var mapDiv = document.getElementById('map');
+    //   var map = new google.maps.Map(mapDiv, {
+    //     center: {lat: position.coords.latitude, lng: position.coords.longitude},
+    //     zoom: 10
+    //   });
+    //   for(var i=0; i<json.page.size; i++) {
+    //     addMarker(map, json._embedded.events[i]);
+    //   }
+    // })
+
+  }
+
+})
 
 
 function getLocation() {
@@ -26,8 +61,6 @@ function showPosition(position) {
       dataType: "json",
       success: function(json) {
                   console.log(json);
-                  var events = document.getElementById("events");
-                  events.innerHTML = json.page.totalElements + " events found.";
                   showEvents(json);
                   initMap(position, json);
                },
@@ -56,9 +89,10 @@ function showError(error) {
 }
 
 
+
 function showEvents(json) {
-  for(var i=0; i<json.page.size; i++) {
-    $("#events").append("<p>"+json._embedded.events[i].name+"</p>");
+  for(var i=0; i< 5; i++) {
+    $("#events").append("<div class='d-flex flex-row'><div class='col-lg-6 mb-4'><div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div></li>");
   }
 }
 

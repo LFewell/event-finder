@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const { User } = require('../models/');
 
+router.get('/', (req, res) => {
+    res.render('home')
+    return;
+})
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -10,7 +15,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/signup', (req, res) => {
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
