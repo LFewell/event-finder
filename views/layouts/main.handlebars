@@ -21,9 +21,8 @@
                 <ul class='navbar-nav'>
                     <!-- Conditionally render login or logout links -->
                     {{#if logged_in}}
-                    <li class="li-inline nav-item"><a href="/">Home</a></li>
-                    <a href="/logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">logout</a>
-                    <li class="li-inline nav-item"><button href="/logout" class="no-button" id="logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">logout</button></li>
+                    <li class="nav-item"><a href="/">Home</a></li>
+                    <li class="nav-item"><a href="/logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to log out.">Log out</a></li>
                     {{else}}
                     <li class="nav-item"><a class="nav-link" href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to return to the home page.">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/login" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to navigate to login page.">Login</a></li>
@@ -45,6 +44,7 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
+    
 </body>
 
 </html>
