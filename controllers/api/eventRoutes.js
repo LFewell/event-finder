@@ -4,6 +4,7 @@ const { Event } = require('../../models');
 
 router.post('/', async (req, res) => {
     console.log('requestBodyEvent', req.body);
+    const body = req.body;
     try {
         const event = await Event.findOne({
             where: {
@@ -13,7 +14,7 @@ router.post('/', async (req, res) => {
 
         if (!event) {
             const newEvent = Event.create({
-                ...req.body
+                ...body, userId: req.session.userId
             });
 
             res.json(newEvent);
