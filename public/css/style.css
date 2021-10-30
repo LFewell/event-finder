@@ -1,6 +1,12 @@
 #map {
-    width: 500px;
+    /* width: 500px; */
     height: 400px;
+    /* margin: 10px; */
+    /* Center Map */
+    margin: auto;
+    margin-bottom: 15px;
+    width: 85%;
+    padding: 10px;
   }
 
  body {
@@ -9,13 +15,23 @@
     height: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    align-items: center;
   }
 
   header {
     background-color: rgb(19, 10, 7);
-    background-image: url(https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg); 
+    /* I like this image, but it's a non-repeating image and can't be stretched. This means the borders are going to be really obvious to anyone looking for them */
+    /* background-image: url(https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg);  */
+    background-image: url('../img/red_black_line_1577925459.jpg');
+    background-size: cover;
     font-size:25px;
     padding:0px;
-    height:250px;
-
+    height:175px;
+    color: white;
+  }
+  
+  
+  .nav-item {
+    padding-right: 45px;
   };
+
