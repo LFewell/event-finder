@@ -6,14 +6,14 @@ User.hasMany(Event, {
     foreignKey: 'eventId',
 });
 
-Event.belongsToMany(User, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE'
-});
+// Event.belongsToMany(User, {
+//     foreignKey: 'userId',
+//     onDelete: 'CASCADE'
+// });
 
-Temp.belongsToMany(User, {
-    foreignKey: 'userId',
-});
+// Temp.belongsToMany(User, {
+//     foreignKey: 'userId',
+// });
 
 
 module.exports = { User, Event, Temp };
