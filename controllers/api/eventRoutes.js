@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 
             res.json(newEvent);
         } else {
-            
+            res.json(event);
         }
     } catch (error) {
         res.status(500).json(error);
