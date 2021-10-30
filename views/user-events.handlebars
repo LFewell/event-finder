@@ -1,10 +1,11 @@
 <div class="events">
-    {{#each events}}
+    {{#each events as |event| }}
     <div class="card" style="height: auto;">
-        <img class="card-img-top" src="" alt="event image cap" />
+        <img class="card-img-top" src="{{event.eventImg}}" alt="event image cap" />
         <div class="card-body d-flex flex-column">
             <p class="card-title">{{event.eventName}}</p>
             <p class="card-text">{{event.eventDescription}}</p>
         </div>
     </div>
+    {{/each}}
 </div>
