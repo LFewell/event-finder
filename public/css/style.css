@@ -1,12 +1,11 @@
 #map {
- frontEnd
     width: 500px;
     height: 400px;
   }
 
  body {
     background-color:black;
-    color:white;
+    color: black;
     height: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -17,12 +16,6 @@
     background-image: url(https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg); 
     font-size:25px;
     padding:0px;
-    padding left: 0px;
     height:250px;
-    height top:200px;
 
-  }
-
-  width: 500px;
-  height: 400px;
-}
+  };
