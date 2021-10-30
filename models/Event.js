@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class Event extends Model{};
 // Create a model for the events table
 // this table should serve as a place-holder for data pulled from the Ticketmaster app
 Event.init(
@@ -32,16 +33,23 @@ Event.init(
             allowNull: false,
         },
         geoLat: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.DECIMAL,
             length: 25,
             allowNull: false,
         },
         geoLon: {
-            type: DataTypes.NUMBER,
+            type: DataTypes.DECIMAL,
             length: 25,
             allowNull: false,
         },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Event',
     }
 );
 
-module.exports = favEvent;
+module.exports = Event;
