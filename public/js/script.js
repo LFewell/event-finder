@@ -19,7 +19,7 @@ btn.on("click", function() {
       function showSearch(json) {
         document.getElementById("events").innerHTML = " ";
         for (var i=0; i<5; i++) {
-          $("#events").append("<div class='position-absolute top-0 start-50 translate-middle card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div></li>"), events.childNodes;
+          $("#events").append("<div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div></li>"), events.childNodes;
         }
   
       }
@@ -50,8 +50,8 @@ function getLocation() {
 }
 function showPosition(position) {
     var location = document.getElementById("location");
-    location.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
+    location.innerHTML = "<span class='pale'>Latitude: " + position.coords.latitude + "</span>" +
+    "<br><span class='pale'>Longitude: " + position.coords.longitude + "</span>"; 
     var latlon = position.coords.latitude + "," + position.coords.longitude;
 
 
@@ -93,7 +93,10 @@ function showError(error) {
 
 function showEvents(json) {
   for(var i=0; i< 5; i++) {
-    $("#events").append("<div class='d-flex flex-row'><div class='row-cols-5 card-group'><div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div>");
+    // This is where the cards are showing up. The commented-out line below is the original, working code
+    // $("#events").append("<div class='d-flex flex-row'><div class='row-cols-5 card-group'><div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div>");
+
+    $("#events").append("<div class='card' style='height:auto'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" atl='event Image cap' /><div class='card-body d-flex flex-column'><p class='card-title'>"+json._embedded.events[i].name+"</p><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='align-self-end btn btn-lg btn-block btn-primary' style='margin-top: auto'>Add to Favorites</a></div></div>");
   }
 }
 

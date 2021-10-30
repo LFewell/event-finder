@@ -30,6 +30,13 @@
     color: white;
   }
   
+  .pale {
+    color: white;
+  }  
+
+  .hideMe {
+    display: none;
+  }
   
   .nav-item {
     padding-right: 45px;
