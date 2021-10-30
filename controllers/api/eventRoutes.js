@@ -1,18 +1,19 @@
 const router = require('express').Router();
 
-const { favEvent } = require('../../models');
+const { Event } = require('../../models');
 
 router.post('/', async (req, res) => {
+    console.log('requestBodyEvent', req.body);
     try {
-        const event = await favEvent.findOne({
+        const event = await Event.findOne({
             where: {
                 eventID: req.body.eventID,
             },
         });
 
         if (!event) {
-            const newEvent = favEvent.create({
-
+            const newEvent = Event.create({
+                ...req.body
             });
 
             res.json(newEvent);
