@@ -42,6 +42,9 @@ Event.init(
             length: 25,
             allowNull: false,
         },
+        eventImgUrl: {
+            type: DataTypes.STRING,
+        },
     },
     {
         sequelize,
