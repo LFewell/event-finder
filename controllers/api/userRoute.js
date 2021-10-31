@@ -4,7 +4,7 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
    try {
-       console.log("it's this one?", req.body);
+       console.log("All for one?", req.body);
        const newUser = await User.create({
            email: req.body.email,
            password: req.body.password,
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
    try {
-       console.log('am i here?', req.body);
+       console.log('One for all?', req.body);
         const user = await User.findOne({
            where: {
                email: req.body.email,
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
            res.status(400).json({ message: 'No user account found!' });
            return;
        } else {
-           console.log('Invalid Password!')
+           console.log('You are now logged in!')
        };
 
        req.session.save(() => {

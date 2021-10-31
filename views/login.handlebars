@@ -1,6 +1,6 @@
 {{!-- make sure to use bootstrap for UI responsiveness all html classes are curtailed to bootstrap --}}
-
-<div class="row">
+{{!-- Original Code --}}
+{{!-- <div class="row">
     <div class="card col-md-5">
         <h2 class="container-fluid card-header text-center text-white bg-primary">Login</h2>
         <div class="card-body">
@@ -43,6 +43,61 @@
             </form>
         </div>
     </div>
-</div>
+</div> --}}
+
+{{!-- New Code --}}
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md">
+            <section class="card text-white bg-primary">
+                <div class="card-header">LOGIN</div>
+                <div class="card-body bg-light text-primary">
+                    <h5 class="card-title">Welcome back, returning-user!</h5>
+                    <form class="form login-form" id="login-form">
+                        <div class="form-group container">
+                            <label for="email-login" class="col-md-4">Email:</label>
+                            <input class="form-input col-md-6" type="text" id="email-login" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Please enter your email here." />
+                        </div>
+                        <div class="form-group container">
+                            <label for="password-login" class="col-md-4">Password:</label>
+                            <input class="form-input col-md-6" type="password" id="password-login" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Please enter your password here." />
+                        </div>
+                        <div class="form-group container pt-3">
+                            <button id="login-button" class="btn btn-primary col-12" type="submit" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Click here to login!">Log in!</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="col-md">
+            <section class="card text-white bg-primary">
+                <div class="card-header">SIGN UP</div>
+                <div class="card-body bg-light text-primary">
+                    <h5 class="card-title">Welcome, new-user!</h5>
+                    <form class="form signup-form" id="signup-form">
+                        <div class="form-group container">
+                            <label for="email-signup" class="col-md-4">Email:</label>
+                            <input class="form-input col-md-6" type="text" id="email-signup" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Please enter your email address here." />
+                        </div>
+                        <div class="form-group container">
+                            <label for="password-signup" class="col-md-4">Password:</label>
+                            <input class="form-input col-md-6" type="password" id="password-signup" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Please enter your desired password here. Min 8 characters." />
+                        </div>
+                        <div class="form-group container pt-3">
+                            <button id="signup-button" class="btn btn-primary col-12" type="submit" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Click here to submit!">Sign up!</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
 
 <script src="/js/login.js"></script>

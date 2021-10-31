@@ -1,33 +1,33 @@
-<body>
-    <div class="col-lg-6">
-      <input type="text" class="form-control" placeholder="Atlanta, Chicago, Jacksonville" id="input-search">
+{{!-- This seems to be redundant --}}
+{{!-- <body> --}}
+<section>
+  <div class="row mt-1" style="width:95%">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-9">
+      <input type="text" class="form-control" placeholder="Atlanta, Chicago, Jacksonville" id="input-search" style="width:100%">
     </div>
-  <div class="input-group-append">
-<<<<<<< Updated upstream
-      <button class="btn btn-outline-secondary" id="btn-search" type="button">Search</button>
+    <div class="col-lg-2 input-group-append">
+      <button class="btn btn-outline-secondary" id="btn-search" type="button" style="width: 91%">Search</button>
+    </div>  
   </div>
-    <p id="location">Please allow your location to see events near you!</p>
-    <div id="map"></div>
-    <div class='container'>
-    <div id="events"></div>
-    </div>
-    
-   
-    <script src="/js/script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtuxJJ_8azkc7EEPAdlFLVd-eXk0mHzQ"></script>
-  </body>
-=======
+
+  {{!--  {{!-- Original Code --}}  --}}
+  {{!-- <div class="col-lg-6">
+    <input type="text" class="form-control" placeholder="Atlanta, Chicago, Jacksonville" id="input-search">
+  </div>
+  <div class="input-group-append">
     <button class="btn btn-outline-secondary" id="btn-search" type="button">Search</button>
   </div> --}}
   <p id="location">Please allow your location to see events near you!</p>
   <div id="map"></div>
 </section>
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGtuxJJ_8azkc7EEPAdlFLVd-eXk0mHzQ"></script>
   <script src="/js/script.js"></script>
+
 
   <section id="events" class= "card-group" style="padding:10px">
 
 {{!-- Presumably redundant --}}
 {{!-- </body> --}}
 
->>>>>>> Stashed changes
