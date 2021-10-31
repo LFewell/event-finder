@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
            res.status(400).json({ message: 'No user account found!' });
            return;
        } else {
-           console.log('Invalid Password!')
+           console.log('You are now logged in!')
        };
 
        req.session.save(() => {
