@@ -50,8 +50,10 @@ function getLocation() {
 }
 function showPosition(position) {
     var location = document.getElementById("location");
-    location.innerHTML = "<span class='pale'>Latitude: " + position.coords.latitude + "</span>" +
-    "<br><span class='pale'>Longitude: " + position.coords.longitude + "</span>"; 
+    // // ORIGINAL CODE
+    // location.innerHTML = "<span class='pale'>Latitude: " + position.coords.latitude + "</span>" +
+    // "<br><span class='pale'>Longitude: " + position.coords.longitude + "</span>"; 
+    location.innerHTML = "<section class='row' style='width:90%'><div class='col-1'></div><div class='col-5 pale'>Latitude:  " + position.coords.latitude + "</div><div class='col-5 pale'>Longitude:  " + position.coords.longitude + " </div></section>" ;
     var latlon = position.coords.latitude + "," + position.coords.longitude;
 
 
