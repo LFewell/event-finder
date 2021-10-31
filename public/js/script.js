@@ -107,7 +107,7 @@ function showEvents(json) {
     // This is where the cards are showing up. The commented-out line below is the original, working code
     // $("#events").append("<div class='d-flex flex-row'><div class='row-cols-5 card-group'><div class='card' style='width: 18rem'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" alt='Card image cap'><div class='card-body'><h5 class='card-title'>"+json._embedded.events[i].name+"</h5><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='btn btn-primary'>Add to Favorites</a></div></div>");
 
-    $("#events").append("<div class='card' style='height:auto'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" atl='event Image cap' /><div class='card-body d-flex flex-column'><p class='card-title'>"+json._embedded.events[i].name+"</p><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><a href='#' class='align-self-end btn btn-lg btn-block btn-primary' style='margin-top: auto'>Add to Favorites</a></div></div>");
+    $("#events").append("<div class='card' style='height:auto'><img class='card-img-top' src="+json._embedded.events[i].images[0].url+" atl='event Image cap' /><div class='card-body d-flex flex-column'><p class='card-title'>"+json._embedded.events[i].name+"</p><p class='card-text'>"+json._embedded.events[i].promoter.description+"</p><p class='card-text'>"+json._embedded.events[i].dates.start.localDate+"</p><a href="+json._embedded.events[i].url+" class='align-self-end btn btn-lg btn-block btn-primary' style='margin-top: auto'>Buy Tickets!</a></div></div>");
   }
 }
 
