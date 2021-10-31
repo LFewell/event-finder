@@ -4,11 +4,19 @@ const apiKey = "MQQSELn5pJ4IejXfT0t5DgufSAGg3gZt"
 const tmUrl = "https://app.ticketmaster.com/discovery/v2/";
 var btn = $("#btn-search")
 var events = $("#events")
+var userInput = document.getElementById("input-search").value;
+var myLatlng = {lat: 37.7751, lng: -122.4194};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: myLatlng
+  });
 
 
 btn.on("click", function() {
   var userInput = document.getElementById("input-search").value
   getEvents();
+  getNewLocation();
   function getEvents() {
     fetch(tmUrl + "events.json?" + "city=" + userInput + "&apikey=" + apiKey )
     .then((response) => response.json())
@@ -50,10 +58,11 @@ function getLocation() {
 }
 function showPosition(position) {
     var location = document.getElementById("location");
+
     // // ORIGINAL CODE
     // location.innerHTML = "<span class='pale'>Latitude: " + position.coords.latitude + "</span>" +
     // "<br><span class='pale'>Longitude: " + position.coords.longitude + "</span>"; 
-    location.innerHTML = "<section class='row' style='width:90%'><div class='col-1'></div><div class='col-5 pale'>Latitude:  " + position.coords.latitude + "</div><div class='col-5 pale'>Longitude:  " + position.coords.longitude + " </div></section>" ;
+    // location.innerHTML = "<section class='row' style='width:90%'><div class='col-1'></div><div class='col-5 pale'>Latitude:  " + position.coords.latitude + "</div><div class='col-5 pale'>Longitude:  " + position.coords.longitude + " </div></section>" ;
     var latlon = position.coords.latitude + "," + position.coords.longitude;
 
 
@@ -102,22 +111,51 @@ function showEvents(json) {
   }
 }
 
+
+
+
+function getNewLocation() {
+  //store city entered into a variable, put it in quotes, and add that to the geocode URL
+  var city = document.getElementById("input-search").value;
+  var cityInQuotes = "\"" + city + "\""
+  var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+cityInQuotes+"&key=AIzaSyBGtuxJJ_8azkc7EEPAdlFLVd-eXk0mHzQ";
+  //return JSON and
+  $.get(geocodeURL,printCoordinates)
+}
+
+function printCoordinates(results) {
+  if (results.status === "ZERO_RESULTS") {
+    alert("Location not found. Try searching for a city or more specific location.")
+} else {
+  userSelectLat = results.results[0].geometry.location.lat;
+  userSelectLng = results.results[0].geometry.location.lng;
+  console.log('arrayresults = '+userSelectLat,userSelectLng);
+  }
+  //re-center map based on new location
+  var relocate = new google.maps.LatLng(userSelectLat, userSelectLng);
+  map.setCenter(relocate);
+}
+
+
+
+
+
 // trying to figure out what constants to add from the show events function
-// const addFavEvent = async (event) => {
-//     event.preventDefault();
+const addFavEvent = async (event) => {
+    event.preventDefault();
 
-//     // values to input into the table from document query selector
-//     await fetch(`/api/event`, {
-//         method: 'POST',
-//         body: JSON.stringify({
-//             title,
-//             body,
-//         }),
-//         headers: { 'Content-Type': 'application/json' },
-//     });
+    // values to input into the table from document query selector
+    await fetch(`/api/event`, {
+        method: 'POST',
+        body: JSON.stringify({
+            title,
+            body,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    });
 
-//     document.location.replace('/dashboard');
-// };
+    document.location.replace('/dashboard');
+};
 
 // document
 //     .querySelector('#events')
@@ -126,7 +164,7 @@ function showEvents(json) {
 
 function initMap(position, json) {
   var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
+  map = new google.maps.Map(mapDiv, {
     center: {lat: position.coords.latitude, lng: position.coords.longitude},
     zoom: 10
   });
