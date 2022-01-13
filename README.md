@@ -12,8 +12,8 @@
 ![imgur](https://imgur.com/vHw3IAV.png)
     
 ## Description:
-
-* An event planning app based on location. Using ticketmaster api along with google maps api.
+ 
+* A group project to develop a program that searches TicketMaster events using Geolocation and user preferences
 
 This was a team project where the four members designed and built an app using the MVC paradigm within one week. It features a server-side API, user authentication, and connects to a database.
     
